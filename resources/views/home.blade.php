@@ -5,19 +5,19 @@
       <!-- Content Header (Page header) -->
       <section class="content-header">
           <h1>
-              Blank page
-              <small>it all starts here</small>
+              Totems
+              <!-- <small>it all starts here</small> -->
           </h1>
-          <ol class="breadcrumb">
+          <!-- <ol class="breadcrumb">
               <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
               <li><a href="#">Examples</a></li>
               <li class="active">Blank page</li>
-          </ol>
+          </ol>  -->
       </section>
 
       <!-- Main content -->
-      <section class="content">
-
+      <section class="container">
+        <div class="row">
           <div class="col-md-4 col-sm-6 col-xs-12">
               <div class="info-box">
                   <span class="info-box-icon" id="boxTotem1"><i class="fa fa-question" id="iconTotem1"></i></span>
@@ -57,7 +57,7 @@
               <!-- /.info-box -->
           </div>
           <!-- /.col -->
-
+          </div>
       </section>
       <!-- /.content -->
   </div>
@@ -66,22 +66,20 @@
       $(function() {
           $.get('http://127.0.0.1:8000/ping', function(data) {
 
-              console.log(data.Totem1);
-
               var totem1 = data.Totem1 == 0 ? 'ligado' : 'desligado';
               var totem2 = data.Totem2 == 0 ? 'ligado' : 'desligado';
               var totem3 = data.Totem3 == 0 ? 'ligado' : 'desligado';
 
-            //   muda a classe de acordo com o estado do totem
+              //   muda a classe de acordo com o estado do totem
               if (data.Totem1 == 0) {
-                //   ligado
+                  //   ligado
                   $('#totem1').text(totem1);
                   $('#boxTotem1').removeClass();
                   $('#boxTotem1').addClass('info-box-icon bg-green');
                   $('#iconTotem1').removeClass();
                   $('#iconTotem1').addClass('fa fa-check');
               } else {
-                //   desligado
+                  //   desligado
                   $('#totem1').text(totem1);
                   $('#boxTotem1').removeClass();
                   $('#boxTotem1').addClass('info-box-icon bg-red');
@@ -89,16 +87,16 @@
                   $('#iconTotem1').addClass('fa fa-exclamation');
               }
 
-            //   muda a classe de acordo com o estado do totem
+              //   muda a classe de acordo com o estado do totem
               if (data.Totem2 == 0) {
-                //   ligado
+                  //   ligado
                   $('#totem2').text(totem2);
                   $('#boxTotem2').removeClass();
                   $('#boxTotem2').addClass('info-box-icon bg-green');
                   $('#iconTotem2').removeClass();
                   $('#iconTotem2').addClass('fa fa-check');
               } else {
-                //   desligado
+                  //   desligado
                   $('#totem2').text(totem2);
                   $('#boxTotem2').removeClass();
                   $('#boxTotem2').addClass('info-box-icon bg-red');
@@ -106,33 +104,23 @@
                   $('#iconTotem2').addClass('fa fa-exclamation');
               }
 
-            //   muda a classe de acordo com o estado do totem
+              //   muda a classe de acordo com o estado do totem
               if (data.Totem3 == 0) {
-                //   ligado
+                  //   ligado
                   $('#totem3').text(totem3);
                   $('#boxTotem3').removeClass();
                   $('#boxTotem3').addClass('info-box-icon bg-green');
                   $('#iconTotem3').removeClass();
                   $('#iconTotem3').addClass('fa fa-check');
               } else {
-                //   desligado
+                  //   desligado
                   $('#totem3').text(totem3);
                   $('#boxTotem3').removeClass();
                   $('#boxTotem3').addClass('info-box-icon bg-red');
                   $('#iconTotem3').removeClass();
                   $('#iconTotem3').addClass('fa fa-exclamation');
-                  
+
               }
-              
-             
-
-
-
-
-              
-
-              // $.each(data,function(indice, valor){
-              // });
           });
 
       });

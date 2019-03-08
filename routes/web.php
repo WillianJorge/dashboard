@@ -17,6 +17,6 @@
 
 Route::get('/ping','PingController@test');
 
-Route::get('/home', function (){
+Route::get('/', function (){
     return view('home');
 });
